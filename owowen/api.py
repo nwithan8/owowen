@@ -49,9 +49,7 @@ class API:
             params["sort"] = sort
         if sort_direction:
             params["direction"] = sort_direction.value
-        movies_data = self.api.get_json(url="/random", params=params)
-        movies = [Movie(**movie_data) for movie_data in movies_data]
-        return movies
+        return self.api.get_object(url="/random", params=params, model=Movie, extract_list=True)
 
     def get_chronological_wows(self, start: int = 0, end: int = None) -> List[Movie]:
         """
@@ -63,11 +61,10 @@ class API:
         wow = f"{start}"
         if end:
             wow += f"-{end}"
-            movies_data = self.api.get_json(url=f"/ordered/{wow}")
-            return [Movie(**movie_data) for movie_data in movies_data]
+            return self.api.get_object(url=f"/ordered/{wow}", model=Movie, extract_list=True)
         else:
-            movie_data = self.api.get_json(url=f"/ordered/{wow}")
-            return [Movie(**movie_data)]
+            movie = self.api.get_object(url=f"/ordered/{wow}", model=Movie)
+            return [movie]
 
     def get_all_movies(self) -> List[str]:
         """
