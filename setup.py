@@ -9,8 +9,8 @@ __github_username__ = "nwithan8"
 __github_repo__ = "owowen"
 __copyright__ = "Copyright © YEARADDEDBYGITHUB - Nate Harris"
 __license__ = 'GNU General Public License v3 (GPLv3)'
-__description__ = "A simple tool for managing your question and answer workflow."
-__keywords__ = ["question", "answer", "workflow", "flow", "ask", "confirm", "nwithan8"]
+__description__ = "A Python client library for the Owen Wilson Wow API"
+__keywords__ = ["Owen Wilson", "wow", "API", "movies", "directors", "nwithan8"]
 
 with open("README.md", "r") as fh:
     long_description = fh.read()

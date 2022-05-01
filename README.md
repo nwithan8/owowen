@@ -1,1 +1,1 @@
-# A simple tool for managing your question and answer workflow.
+# A Python client library for the [Owen Wilson Wow API](https://owen-wilson-wow-api.herokuapp.com/)
